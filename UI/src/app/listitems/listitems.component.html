@@ -1,0 +1,20 @@
+
+<app-navbar2></app-navbar2>
+
+<div class="container">
+  <h2 class="heading"><i class="fas fa-shopping-basket"></i> List of Available Items</h2>
+
+  <div *ngIf="itemsList.length > 0; else noItems" class="items-container">
+    <div *ngFor="let item of itemsList" class="item">
+      <img [src]="item.image" alt="Item Image" (click)="openavailablerestaurantpopup(item.id)">
+      <h3><i class="fas fa-utensils"></i> {{ item.itemName }}</h3>
+    </div>
+
+  </div>
+
+  <ng-template #noItems>
+    <div class="no-Items">
+      <h2>No Items available at the moment.</h2>
+    </div>
+  </ng-template>
+</div>

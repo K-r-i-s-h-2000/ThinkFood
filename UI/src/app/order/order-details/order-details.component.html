@@ -1,0 +1,64 @@
+<app-navbar2></app-navbar2>
+<div class="order-details">
+  <div class="customer-details">
+    <div class="customer-details__name-address box">
+      <p class="label"><strong>Name:</strong></p>
+      <p class="value">{{ order.customerName }}</p>
+      <p class="label"><strong>Address:</strong></p>
+      <p class="value">{{ order.address }}</p>
+    </div>
+    <div class="customer-details__coupon box">
+      <p *ngIf="order.couponCode" class="label"><strong>Coupon Code:</strong></p>
+      <p *ngIf="order.couponCode" class="value">{{ order.couponCode }}</p>
+      <p *ngIf="order.couponDiscount" class="label"><strong>Coupon Discount:</strong></p>
+      <p *ngIf="order.couponDiscount" class="value">{{ order.couponDiscount }}%</p>
+    </div>
+    <div class="customer-details__gst-total box">
+      <p class="label"><strong>GST Availed :</strong></p>
+      <p class="value">{{ order.gstAmount | currency: 'INR' }}</p>
+      <p class="label"><strong>Total Cost:</strong></p>
+      <p class="value">{{ order.totalCost | currency: 'INR' }}</p>
+    </div>
+    <div class="restaurant-details">
+        <div class="restaurant-details__name-status box">
+            <img class="restaurant-image" [src]="order.orderedItems[0].restaurantImage" alt="order.orderedItems[0].restaurant">
+
+          <p class="label"><strong>Restaurant Name:</strong></p>
+          <p class="value">{{ order.orderedItems[0].restaurant }}</p>
+          <p class="label"><strong>Preparation Status:</strong></p>
+          <p class="value" style="color:green"><strong>{{ order.preparationStatus }}</strong></p>
+        </div>
+      </div>
+
+      <div class="restaurant-details__ordered-items box">
+        <h3><strong>Ordered Items</strong></h3>
+        <div *ngFor="let item of order.orderedItems" class="ordered-item">
+          <div class="item-image-container">
+            <img class="item-image" [src]="item.itemImage" alt="{{ item.name }}">
+          </div>
+
+          <div class="item-details">
+            <p class="label"><strong>Name:</strong></p>
+            <p class="value">{{ item.name }}</p>
+            <p class="label"><strong>Quantity:</strong></p>
+            <p class="value">{{ item.quantity }}</p>
+            <p class="label"><strong>SubTotal:</strong></p>
+            <p class="value">{{ item.subTotal | currency: 'INR'  }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-button" (click)="showDeliveryDetails()">
+        <!-- <button (click)="showDeliveryDetails()"> -->
+          <img src="https://t4.ftcdn.net/jpg/04/29/81/81/360_F_429818115_FC8Yo1bGel4E8YXnLyA3HChkrGVU0h25.jpg" alt="Delivery Details" class="delivery-icon">
+         <p class="delivery-text"> Show Delivery Details </p>
+         <!-- </button> -->
+      </div>
+
+      <!-- <div class="delivery-button" (click)="showDeliveryDetails()">
+              <button (click)="showDeliveryDetails()">Delivery Details</button>
+
+
+
+      </div> -->
+      </div>

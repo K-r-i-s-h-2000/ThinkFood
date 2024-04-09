@@ -1,0 +1,12 @@
+<div class="DeliveredContainer">
+
+    <h1 class="deliveredTitle" mat-dialog-title>Order Delivery Confirmation</h1>
+    <div class="deliveredContent" mat-dialog-content>
+      <p>Are you sure you delivered the order?</p>
+      <p>Please make sure you have delivered and update the status. Once you have updated, you can not change it.</p>
+    </div>
+    <div class="deliveredAction" mat-dialog-actions>
+      <button class="deliveredYes" mat-button [mat-dialog-close]="true" (click)="yes()">Yes</button>
+      <button class="deliveredNo" mat-button [mat-dialog-close]="false" >No</button>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container">
+    <h2>Update Category</h2>
+    <form [formGroup]="updateForm" (ngSubmit)="updateCategory()">
+      <div>
+        <label for="categoryName">Title:</label>
+        <input type="text" id="categoryName" formControlName="categoryName">
+        <div *ngIf="updateForm.get('categoryName').hasError('required') && updateForm.get('categoryName').touched">
+          <small>Title is required.</small>
+        </div>
+      </div>
+      <div>
+        <label for="image">Image:</label>
+        <input type="text" id="image" formControlName="image">
+        <div *ngIf="updateForm.get('image').hasError('required') && updateForm.get('image').touched">
+          <small>Image is required.</small>
+        </div>
+      </div>
+      <div>
+        <button type="submit">Update</button>
+        <button type="button" (click)="closeDialog()">Cancel</button>
+      </div>
+    </form>
+</div>
+  

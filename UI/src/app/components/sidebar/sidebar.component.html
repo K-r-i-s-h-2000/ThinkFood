@@ -1,0 +1,31 @@
+
+<div class="sidebar">
+ 
+
+  <div class="coupon-form">
+    <form (ngSubmit)="applyCoupon()" #couponForm="ngForm">
+      <label for="couponCode">Coupon Code:</label>
+      <input type="text" id="couponCode" name="couponCode" [(ngModel)]="couponCode" required>
+      <button type="submit" class="btn btn-primary">Apply Coupon</button>
+    </form>
+    <div *ngIf="popUp">
+      <h4>Enter a valid coupon code</h4>
+    </div>
+  </div>
+
+
+
+    <div class="advertisement-coupon">
+
+      <ul>
+        <p> <strong>Coupons For you</strong></p>
+
+        <li *ngFor="let coupon of advertisementCoupons">
+          <a (click)="applyAdvertisementCoupon(coupon)">{{ coupon.couponCode }}</a>
+        </li>
+     </ul>
+    </div>
+
+
+
+</div>

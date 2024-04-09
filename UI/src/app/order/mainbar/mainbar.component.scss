@@ -1,0 +1,152 @@
+:host {
+  position: relative;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: block;
+  flex: 1;
+  padding: 20px;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url(/assets/images/confirm-order.jpg);
+  background-size: 11%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+
+.btn-primary {
+  border: none;
+  border: solid;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #b12c14;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.confirm-order-button{
+  border: none;
+  border: solid;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #b12c14;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+.remove-coupon-button
+{
+  border: none;
+  border: solid;
+  border-radius: 10px;
+  padding: 10px 15px;
+  background-color: #b12c14;
+  color: #ffffff;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #0056b3;
+  }
+
+}
+.cart-items {
+
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  /* align-items: flex-start; */
+  width: 30%;
+  // margin-top: 20px;
+  // display: flex;
+  // flex-direction: column;
+  // align-items: flex-start;
+}
+
+.cart-item {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  border-radius: 34px;
+}
+
+.item-image-container {
+  width: 150px; /* Set a fixed width for the image container */
+  height: 150px; /* Set a fixed height for the image container */
+  overflow: hidden;
+}
+
+.item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-details {
+  flex: 1;
+  padding: 10px;
+}
+
+.cart-item p {
+  margin: 5px 0;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.confirm-order {
+  background-color: rgb(255 255 255 / 80%);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  opacity: 1;
+}
+
+.confirm-order h2 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.confirm-order p {
+  margin: 10px 0;
+}
+
+.item-images-container1 {
+  display: flex;
+  flex-direction: row;
+  align-items:flex-start;
+}
+
+.item-image-container1 {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.item-image1 {
+  width: 93%;
+  height: 84%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+

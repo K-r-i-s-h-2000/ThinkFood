@@ -1,0 +1,62 @@
+/* Add these styles to your component-specific CSS or your global styles */
+
+.coupon-list-container {
+    margin-top: 20px;
+  }
+  .h1{
+    font: 422 32px/51px Roboto, Gotham;
+    letter-spacing: normal;
+    margin: 0 0 16px;
+  }
+  .button-create{
+    padding: 12px;
+    background-color: #b12c14;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 1.3s ease-out;
+    margin-left: 3px;
+    margin-bottom: 18px;
+}
+
+  .coupon-item {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative; /* Position for absolute buttons */
+  }
+
+  .coupon-item p {
+    margin: 0;
+  }
+
+  .button-container {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .button-container button {
+    margin-left: 8px;
+    padding: 8px 12px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+
+  /* Optional: Add hover effect */
+  .coupon-item:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-3px);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .expired {
+    background-color: rgba(255, 0, 0, 0.1); /* Light red background for expired coupons */
+  }
+

@@ -1,0 +1,40 @@
+<app-navbar2></app-navbar2>
+
+<div *ngIf="cart">
+  <h2>Your Cart</h2>
+  <div *ngIf="cart.cartItem.length > 0; else emptyCart"  >
+  <div *ngFor="let cartItem of cart.cartItem" class="cart-item" >
+    <div >
+      <img class="item-image" [src]="cartItem.itemImage" alt="{{ cartItem.itemName }}">
+      <p class="item-name">{{ cartItem.itemName }}</p>
+      <div>
+
+        <input type="button" (click)="updateQuantity(cartItem.id, 'decrease')" value="-" />
+        <input type="number" name="Quantity" [value]= "cartItem.quantity" maxlength="2" max="10" size="1" id="number" />
+        <input type="button" (click)="updateQuantity(cartItem.id, 'increase')" value="+" />
+
+      </div>
+      <p class="price">Price: {{ cartItem.itemPrice | currency: 'INR' }}</p>
+      <p class="subtotal">Subtotal: {{ cartItem.subtotal | currency: 'INR' }}</p>
+      <div>
+        <button (click)="deleteCartItem(cartItem.id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="totalAmount">
+    <p >Total Amount: {{ cart.totalAmount | currency: 'INR' }}</p>
+  </div>
+  <div class="order-button">
+    <button (click)="saveCart()">Order</button>
+  </div>
+  </div>
+
+  <ng-template #emptyCart>
+    <div class="cart-empty">
+      <img [src]= "'assets/images/empty_cart.jpg'" alt="Empty Cart Image">
+      <h2><strong>Cart is Empty</strong><br />Go back to <a routerLink = "/Demo">Home Page.</a></h2>
+
+    </div>
+  </ng-template>
+</div>
+

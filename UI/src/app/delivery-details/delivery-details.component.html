@@ -1,0 +1,39 @@
+<app-delivery-details-navbar></app-delivery-details-navbar>
+<div class="containerBox">
+<div class="DDDContainer">
+  <div *ngIf="deliveryDetails">
+    <div *ngIf="getStatusText(deliveryDetails.deliveryStatus) != 'Please Try again after some time!'">
+      <div class="statusImage">
+        <img [src]="getStatusImage(deliveryDetails.deliveryStatus)" alt="Delivery Status Image">
+        <p>{{ getStatusText(deliveryDetails.deliveryStatus) }}</p>
+      </div>
+      <div class="DeliveryTime"  *ngIf="getStatusText(deliveryDetails.deliveryStatus) != 'Food is delivered'">
+        <p> Your order will reach Soon!</p>
+        <p *ngIf="remainingTime!=0">Your order wil be delivered within  {{remainingTime}} minutes</p>
+        <p *ngIf="remainingTime===0"> Sorry for the delay!!</p>
+      </div>
+      <div class="OrderedItems">
+        <h4>Items:</h4>
+        <div class="itemContainer">
+          <p *ngFor="let item of deliveryDetails.deliveryItems">
+            {{ item.itemName|uppercase }}   x    {{ item.quantity }}
+          </p>
+        </div>
+      </div>
+      <div class="DMainDetails">
+        <p>Restaurant :  {{ deliveryDetails.restaurantName}}</p>
+        <p>Customer Name  : {{ deliveryDetails.customerName }}</p>
+        <p> Date : {{deliveryDetails.createdDateTime| date:'dd-MM-yyyy'}}</p>
+        <p> Delivery Agent: {{deliveryDetails.deliveryName}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="getStatusText(deliveryDetails.deliveryStatus) === 'Please Try again after some time!'">
+  <div class="statusImageUnknown">
+    <img [src]="getStatusImage(deliveryDetails.deliveryStatus)" alt="Delivery Status Image">
+    <p>{{ getStatusText(deliveryDetails.deliveryStatus) }}</p>
+  </div>
+</div>
+</div>

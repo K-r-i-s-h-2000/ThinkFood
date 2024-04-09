@@ -1,0 +1,52 @@
+.Dsidebar {
+  width: 100%;
+  max-width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 22px;
+  height: 100%;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  .deliveryItem {
+    list-style-type: none;
+    margin-top: 20px;
+  }
+
+  .deliveryHome,
+  .deliveryHistory,
+  .deliveryCurrent {
+    button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #fff;
+      font-family: 'Helvetica', sans-serif; /* Set font-family to Helvetica */
+      margin-bottom: 30px;
+      margin-left: 2px;
+      display: flex;
+      flex-direction: row;
+      font-size: 14.5px;
+      width: 100%;
+
+      &:hover {
+        background-color: #0056b3;
+        transform: scale(1.1); /* Increase size on hover */
+        transition: all 0.3s ease; /* Add transition effect */
+      }
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .Dsidebar {
+      padding: 10px;
+    }
+  }
+}

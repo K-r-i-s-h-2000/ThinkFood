@@ -1,0 +1,41 @@
+<!-- <div *ngIf="editingItem" class="container">
+  <h2>Edit Item</h2>
+  <form [formGroup]="editingForm" (ngSubmit)="updateItem()">
+    <div>
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" formControlName="itemName" />
+    </div>
+    <div>
+      <label for="image">Food Image:</label>
+      <input type="text" id="image" formControlName="image" />
+    </div>
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div> -->
+
+<div class="container">
+    <h2>Update Item</h2>
+    <form [formGroup]="updateItemForm" (ngSubmit)="updateItem()">
+      <div>
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" formControlName="itemName">
+        <div *ngIf="updateItemForm.get('itemName').hasError('required') && updateItemForm.get('itemName').touched">
+          <small>Title is required.</small>
+        </div>
+      </div>
+      <div>
+        <label for="image">Food Image:</label>
+        <input type="text" id="image" formControlName="image">
+        <div *ngIf="updateItemForm.get('image').hasError('required') && updateItemForm.get('image').touched">
+          <small>Image is required.</small>
+        </div>
+      </div>
+      <div>
+        <button type="submit">Update</button>
+        <button type="button" (click)="closeDialog()">Cancel</button>
+      </div>
+    </form>
+</div>
+  

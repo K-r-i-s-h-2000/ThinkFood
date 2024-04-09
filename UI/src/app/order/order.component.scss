@@ -1,0 +1,13 @@
+/* order.component.scss */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full height of the viewport */
+  }
+  
+  .content {
+    display: flex;
+    flex: 1; /* Takes up remaining vertical space */
+  }
+  
+ 

@@ -1,0 +1,13 @@
+<app-navbar4></app-navbar4>
+<h1>Coupons</h1>
+<button class="button-create" (click)="navigateToCreateCoupon()">Create Coupon</button>
+
+<div class="coupon-item" *ngFor="let coupon of coupons" [ngClass]="{ 'expired': isExpired(coupon.expiryDate) }">
+  <p><strong>Coupon Code:</strong> {{ coupon.couponCode }}</p>
+  <p><strong>Discount Percentage:</strong> {{ coupon.discountPercentage }}</p>
+  <p [style.color]="isExpired(coupon.expiryDate) ? 'red' : 'green'"><strong>Expiry Date:</strong> {{ coupon.expiryDate }}</p>
+  <div class="button-container">
+    <button (click)="updateCoupon(coupon.couponCode)">Update</button>
+    <button (click)="deleteCoupon(coupon.id)">Delete</button>
+  </div>
+</div>

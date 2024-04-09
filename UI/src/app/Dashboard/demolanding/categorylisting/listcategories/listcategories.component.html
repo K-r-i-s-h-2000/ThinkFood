@@ -1,0 +1,7 @@
+<div class="scroll-container" style="max-width:100%; overflow-x: auto; white-space: nowrap;">
+    <div *ngFor="let category of categories" style="display: inline-block;">
+        <p>{{category.categoryName}}</p>
+        <img src="{{category.image}}"  style="width: 144px; height: 145px; padding: 5px;"
+        (click)="navigateToItemsByCategory(category.id)">
+    </div>
+</div>

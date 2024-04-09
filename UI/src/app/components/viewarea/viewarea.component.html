@@ -1,0 +1,350 @@
+<div class="view-area">
+  <div *ngIf="isHiVisible() || menuStatus === 7">
+    <h2 class="menu-heading">List of Orders</h2>
+    <div *ngIf="order">
+      <div class="button-container">
+        <button (click)="filterOrders('PREPARATION')" class="status-button preparation-button" [ngClass]="{'preparation-button': !preparationButtonClicked, 'preparation-button-clicked': preparationButtonClicked}">Preparation</button>
+        <button (click)="filterOrders('OUT_FOR_DELIVERY')"  class="status-button" [ngClass]="{'delivery-button': !deliveryButtonClicked, 'delivery-button-clicked': deliveryButtonClicked}">Out for Delivery</button>
+      </div>
+      <div></div>
+
+      <div *ngIf="preparationButtonClicked || deliveryButtonClicked">
+        <div *ngIf=" filteredOrders.length > 0;else emptyOrder">
+      <table class="order-table" >
+        <thead>
+          <tr>
+            <th>Sn. No</th>
+            <th>Customer Name</th>
+            <th>Ordered Item</th>
+            <th>Quantity</th>
+            <th>Total Cost</th>
+            <th>Preparation Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let orderItem of filteredOrders.reverse(); let i = index" class="order-details" [ngClass]="{'preparation-green': orderItem.preparationStatus === 'PREPARATION', 'preparation-red': orderItem.preparationStatus !== 'PREPARATION'}">
+            <td>{{ i + 1 }}</td>
+            <td>{{ orderItem.customerName }}</td>
+            <td>
+              <div *ngFor="let item of orderItem.orderedItems" class="ordered-item">
+                {{ item.name }}
+              </div>
+            </td>
+            <td>
+              <div *ngFor="let item of orderItem.orderedItems" class="ordered-item">
+                {{ item.quantity }}
+              </div>
+            </td>
+            <td>{{ orderItem.totalCost }}</td>
+            <td>
+              <button
+                (click)="onStatusChange(orderItem.id)"
+                [style.backgroundColor]="orderItem.preparationStatus === 'PREPARATION' ? '#4CAF50' : ' #E9E3E3CC'"
+                [style.color]="orderItem.preparationStatus === 'PREPARATION' ? '#FFFFFF' : '#000000'"
+                [disabled]="loadingOrders[orderItem.id]"
+              >
+                <span *ngIf="loadingOrders[orderItem.id]">Loading...</span>
+                <span *ngIf="!loadingOrders[orderItem.id]">{{ orderItem.preparationStatus }}</span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <ng-template #emptyOrder>
+    <div class="order-empty">
+      <img [src]= "'assets/images/empty_cart.jpg'" alt="Empty Order Image">
+      <h2><strong>No orders till now!</strong></h2>
+
+    </div>
+  </ng-template>
+
+
+<div *ngIf="menuStatus === 1">
+  <div *ngIf="!showAddForm && itemData">
+    <h2 class="menu-heading">Add new items to your menu</h2>
+    <div class="grid-container">
+      <div class="grid-item" *ngFor="let item of itemData; let i = index">
+        <div class="item-details">
+          <img class="item-image" [src]="item.image " alt=" Item image " class="item-photo" >
+          <p class="item-name">{{ item.itemName }}</p>
+        </div>
+        <button (click)="showForm(item.id)"><i class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+  </div>
+
+
+
+
+    <div *ngIf="showAddForm">
+    <form [formGroup]="createMenuForm" (ngSubmit)="onMenuSubmit()">
+    <span class="close-icon" (click)="closeCreateForm()">&times;</span>
+
+
+      <div class="form-group" >
+
+        <label for="itemDescription">Item Description</label>
+        <input type="text" id="itemDescription" name="itemDescription" placeholder="Enter item description" required formControlName="itemDescription">
+        <div *ngIf="createMenuForm.get('itemDescription').hasError('required') && createMenuForm.get('itemDescription').touched">
+          <small>Required field</small>
+        </div>
+
+      </div>
+
+      <div class="form-group" >
+        <label for="itemPrice">Item Price</label>
+        <input type="text" id="itemPrice" name="itemPrice" placeholder="Enter price" formControlName="itemPrice">
+        <div *ngIf="createMenuForm.get('itemPrice').hasError('required') && createMenuForm.get('itemPrice').touched">
+          <small>Required field</small>
+        </div>
+        <div *ngIf="createMenuForm.get('itemPrice').hasError('pattern')">
+          <small>Enter a valid numeric value (up to 2 decimal places)</small>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="preparationTime">Preparation Time(min)</label>
+        <input type="text" id="preparationTime" name="preparationTime" placeholder="Enter preparation time"formControlName="preparationTime">
+        <div *ngIf="createMenuForm.get('preparationTime').hasError('required') && createMenuForm.get('preparationTime').touched">
+          <small>Required field</small>
+        </div>
+        <div *ngIf="createMenuForm.get('preparationTime').hasError('pattern')">
+          <small>Enter a valid time</small>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="itemAvailability">Item Availability</label>
+        <input type="checkbox" id="itemAvailability" name="itemAvailability" formControlName="itemAvailability">
+      </div>
+
+      <button type="submit">Add Item</button>
+
+    </form>
+  </div>
+  </div>
+
+
+
+  <!-- <div *ngIf="menuStatus === 3">
+    <h2> Menu</h2>
+    <ul class="menu-list">
+      <li *ngFor="let menu of restaurantMenu" class="menu-item">
+        <button (click)="onGetMenuById(menu.menuId)" class="menu-button">{{ menu.itemName }}</button>
+        <div class="action-buttons">
+          <button (click)="onUpdateMenu()" class="update-button"><i class="fa-solid fa-file-pen"></i></button>
+          <button (click)="onDeleteMenu(menu.menuId)" class="action-button"><i class="fa-solid fa-trash"></i></button>
+        </div>
+      </li>
+    </ul>
+    <div *ngIf="menuData && viewMenuVisible"  class="menu-details-card">
+      <h2>Selected Menu Details</h2>
+      <div class="menu-detail-item">
+      <p><strong>Price:</strong> {{ menuData.itemPrice }}</p>
+      <p><strong>Item Description:</strong> {{ menuData.itemDescription }}</p>
+      <p><strong>Item Availability:</strong> {{ menuData.itemAvailability }}</p>
+      <p><strong>Preparation Time:</strong> {{ menuData.preparationTime }} min</p>
+    </div>
+  </div> -->
+  <div *ngIf="menuStatus === 3">
+    <h2 class="menu-heading">Manage Your Restaurant's Menu</h2>
+<ul class="menu-list">
+  <li *ngFor="let menu of restaurantMenu" class="menu-item">
+    <div class="image-container">
+      <img class="menu-image" [src]="menu.image " alt=" Menu image ">
+    </div>
+
+    <button (click)="onGetMenuById(menu.menuId)" class="menu-button">{{ menu.itemName }}</button>
+    <div *ngIf="selectedMenu === menu.menuId" class="menu-details-card">
+      <div class="menu-detail-item">
+        <p><strong>Item:</strong> {{ menu.itemName }}</p>
+        <p><strong>Price:</strong> {{ menu.itemPrice }}</p>
+        <p><strong>Item Description:</strong> {{ menu.itemDescription }}</p>
+        <p><strong>Item Availability:</strong> {{ menu.itemAvailability }}</p>
+        <p><strong>Preparation Time:</strong> {{ menu.preparationTime }} min</p>
+      </div>
+      <div class="action-buttons">
+        <button (click)="onUpdateMenuButton(menuData)" class="update-button theme-button"><i class="fa-solid fa-file-pen"></i> Update</button>
+        <button (click)="onDeleteMenu(menu.menuId)" class="action-button theme-button"><i class="fa-solid fa-trash"></i> Delete</button>
+      </div>
+    </div>
+  </li>
+</ul>
+
+
+
+  <div *ngIf="editMenuFormVisible">
+    <form [formGroup]="editMenuForm" (ngSubmit)="onUpdateMenu()">
+    <span class="close-icon" (click)="closeEditForm()">&times;</span>
+
+      <div class="form-group" >
+        <label for="itemDescription">Item Description</label>
+        <input type="text" id="itemDescription" name="itemDescription" placeholder="Enter item description" required formControlName="itemDescription">
+        <div *ngIf="editMenuForm.get('itemDescription').hasError('required') && editMenuForm.get('itemDescription').touched">
+          <small>Required field</small>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="itemPrice">Item Price</label>
+        <input type="text" id="itemPrice" name="itemPrice" placeholder="Enter price" required formControlName="itemPrice">
+        <div *ngIf="editMenuForm.get('itemPrice').hasError('required') && editMenuForm.get('itemPrice').touched">
+          <small>Required field</small>
+        </div>
+        <div *ngIf="editMenuForm.get('itemPrice').hasError('pattern')">
+          <small>Enter a valid numeric value (up to 2 decimal places)</small>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="preparationTime">Preparation Time (min)</label>
+        <input type="text" id="preparationTime" name="preparationTime" placeholder="Enter preparation time" required formControlName="preparationTime">
+        <div *ngIf="editMenuForm.get('preparationTime').hasError('required') && editMenuForm.get('preparationTime').touched">
+          <small>Required field</small>
+        </div>
+        <div *ngIf="editMenuForm.get('preparationTime').hasError('pattern')">
+          <small>Enter a valid time</small>
+        </div>
+      </div>
+
+      <div class="form-group" >
+        <label for="itemAvailability">Item Availability</label>
+        <input type="checkbox" id="itemAvailability" name="itemAvailability" required formControlName="itemAvailability">
+      </div>
+
+      <button type="submit">Update</button>
+
+    </form>
+
+  </div>
+
+  </div>
+
+
+  <div *ngIf="editStatus === 2" class="profile-data-container">
+    <span class="close-icon" (click)="closeForm()">&times;</span>
+    <img [src]="profileData.image " alt=" Restaurant image "  >
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Name:</p>
+      <p class="profile-value">{{ profileData.restaurantName }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Description:</p>
+      <p class="profile-value">{{ profileData.restaurantDescription }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Email:</p>
+      <p class="profile-value">{{ profileData.email }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Contact Number:</p>
+      <p class="profile-value">{{ profileData.phoneNumber }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Longitude:</p>
+      <p class="profile-value">{{ profileData.restaurantLongitude }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Latitude:</p>
+      <p class="profile-value">{{ profileData.restaurantLatitude }}</p>
+    </div>
+
+    <div class="profile-item">
+      <p class="profile-label">Restaurant Availability:</p>
+      <p class="profile-value">{{ profileData.restaurantAvailability ? 'OPEN' : 'CLOSE' }}</p>
+    </div>
+  </div>
+
+
+  <div *ngIf="editStatus === 1">
+
+  <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit1()">
+  <span class="close-icon" (click)="closeForm()">&times;</span>
+
+  <div class="form-group" >
+    <label for="restaurantName">Name</label>
+    <input type="text" id="restaurantName" name="restaurantName" placeholder="Enter restaurant name" required formControlName="restaurantName">
+    <div *ngIf="reactiveForm.get('restaurantName').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="restaurantDescription">Description</label>
+    <input type="text" id="restaurantDescription" name="restaurantDescription" placeholder="Enter restaurant description" required formControlName="restaurantDescription">
+    <div *ngIf="reactiveForm.get('restaurantDescription').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter restaurant email" required formControlName="email">
+    <div *ngIf="reactiveForm.get('email').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+    <div *ngIf="reactiveForm.get('email').hasError('email')">
+      <small>Invalid email format</small>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="restaurantLatitude">Latitude</label>
+    <input type="text" id="restaurantLatitude" name="restaurantLatitude" placeholder="Enter latitude" required formControlName="restaurantLatitude">
+    <div *ngIf="reactiveForm.get('restaurantLatitude').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+    <div *ngIf="reactiveForm.get('restaurantLatitude').hasError('pattern')">
+      <small>Invalid latitude format</small>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="restaurantLongitude">Longitude</label>
+    <input type="text" id="restaurantLongitude" name="restaurantLongitude" placeholder="Enter longitude" required formControlName="restaurantLongitude">
+    <div *ngIf="reactiveForm.get('restaurantLongitude').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+    <div *ngIf="reactiveForm.get('restaurantLongitude').hasError('pattern') && reactiveForm.get('restaurantName').touched">
+      <small>Invalid longitude format</small>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="phoneNumber">Phone Number</label>
+    <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter phone number" required formControlName="phoneNumber">
+    <div *ngIf="reactiveForm.get('phoneNumber').hasError('required') && reactiveForm.get('restaurantName').touched">
+      <small>Required field</small>
+
+    </div>
+    <div *ngIf="reactiveForm.get('phoneNumber').hasError('pattern')">
+      <small>Invalid phone number</small>
+    </div>
+  </div>
+
+  <div class="form-group" >
+    <label for="restaurantAvailability">Available</label>
+    <input type="checkbox" id="restaurantAvailability" name="restaurantAvailability" formControlName="restaurantAvailability">
+  </div>
+
+  <button type="submit">Save Changes</button>
+  </form>
+
+  </div>
+
+</div>

@@ -1,0 +1,93 @@
+.order-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    // margin: 20px;
+    // display: flex;
+    // display: inline;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+    // margin: 20px;
+//     background-color: #000000;
+// opacity: 0.8;
+// background: repeating-linear-gradient( 45deg, #060303, #060303 13.5px, #000000 13.5px, #000000 67.5px );
+   
+    
+  }
+  
+  .customer-details,
+  .restaurant-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 427px; 
+  }
+
+.restaurant-details__name-status{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 94%; 
+
+}
+  
+  .box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .label {
+    margin: 5px 0;
+    font-weight: bold;
+  }
+  
+  .value {
+    margin: 5px 0;
+    color: #333;
+  }
+  
+  .ordered-item {
+    margin-bottom: 40px;
+    
+  }
+
+  .item-image-container {
+    width: 80px; 
+    height: 80px; 
+    margin-right: 20px; 
+  }
+  
+  .item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .delivery-button{
+    /* width: 10px; */
+    position: fixed;
+    top: 50%;
+    left: 84%;  }
+  
+  .delivery-icon {
+    width: 22%;
+    height: 91%;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+
+  .delivery-text{
+    font-weight: 500;
+  }
+  
+  // .delivery-button button {
+  //   /* Add any additional styling for the button if needed */
+  // }
+  
+  
+
+  

@@ -1,0 +1,62 @@
+/* Updated class names and additional styling */
+.coupon-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #ccb97ce5;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(163, 16, 16, 0.1);
+    box-sizing: border-box;
+  }
+  
+  .create-coupon {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .create-coupon-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  .expiry-date-input{
+    padding: 11px;
+    border-radius: 16px;
+    width: 33%;
+    font-size: medium;
+    font-weight: 500;
+}
+  
+  .discount-percent {
+    text-align: left;
+    margin-bottom: 15px;
+  }
+  
+  .discount-percentage-input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  .btn-primary {
+    size: 0cap;
+    background-color: rgb(171, 177, 92);
+    border: none;
+    padding: 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+  }
+  

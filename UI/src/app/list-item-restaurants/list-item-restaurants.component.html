@@ -1,0 +1,31 @@
+<div class="page-heading">
+    <h2>
+        <i class="fas fa-utensils utensils-icon"></i> <!-- Added a class for styling -->
+        Available Restaurants
+    </h2>
+    <span class="close-icon" (click)="closeForm()">&times;</span>
+</div>
+
+
+<div *ngIf="restaurants.length > 0; else noRestaurants">
+    <div *ngFor="let restaurant of restaurants">
+        <div class="restaurant">
+            <img (click)="navigate(restaurant.restaurantId)" [src]="restaurant.restaurantImage" alt="Restaurant Image">
+            <div class="restaurant-info">
+                <h3>{{ restaurant.restaurantName }}</h3>
+                <p>{{ restaurant.restaurantDescription }}</p>
+                <!-- <div class="contact-details">
+                    <p>Email: {{ restaurant.restaurantEmail
+                    }}</p>
+                    <p>Phone: {{ restaurant.restaurantPhoneNumber }}</p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #noRestaurants>
+    <div class="no-restaurants-message">
+        <p>No restaurants available at the moment.</p>
+    </div>
+</ng-template>

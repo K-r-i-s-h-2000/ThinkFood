@@ -1,0 +1,149 @@
+
+// .edit-profile-form {
+
+//     position: fixed;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%, -50%);
+//     background-color: white;
+//     padding: 40px;
+//     border: 1px solid #ccc;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+//     z-index: 1000;
+//     width: 300px;
+//   }
+
+//   .edit-profile-form h2 {
+//     margin-bottom: 15px;
+//   }
+
+//   .editProfileForm .form-group {
+//     margin-bottom: 20px;
+//   }
+
+  .reactiveform label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+//   .editProfileForm input {
+//     width: 100%;
+//     padding: 8px;
+//     border-radius: 5px;
+//     border: 1px solid #ccc;
+//     font-size: 16px;
+//     margin-top: 5px;
+//   }
+
+//   .editProfileForm button {
+
+//     width: calc(100% - 20px);
+//     padding: 8px;
+//     border: 1px solid #ccc;
+//     border-radius: 5px;
+//     font-size: 14px;
+//     outline: none;
+//     background-color: #ffcc00;
+//     color: #333;
+//     cursor: pointer;
+//   }
+
+//   .editProfileForm button:hover {
+//     background-color: #ffc107;
+//   }
+  .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #999;
+  }
+  .profile-picture-container {
+    width: 150px; /* Adjust the size of the circular container */
+    height: 150px;
+    border-radius: 50%; /* Creates a circular shape */
+    overflow: hidden; /* Clips the image to the container */
+    margin: 0 auto 20px; /* Centers the container and adds some bottom margin */
+    position: relative;
+    border: 2px solid #fff; /* Optional: Add a border */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Optional: Add a shadow */
+}
+
+.profile-picture {
+    width: 100%; /* Makes sure the image fills the circular container */
+    height: 100%;
+    object-fit: cover; /* Preserves the aspect ratio and covers the container */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+/* Styles for the form */
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+button {
+  width: calc(100% - 20px);
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+  outline: none;
+  background-color: #b12c14;
+  color: #edf0f3;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.close-icon {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #999;
+}
+
+/* Position the form */
+form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 40px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 300px;
+}
+
+/* Styles for error messages */
+form small {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}

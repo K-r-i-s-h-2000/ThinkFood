@@ -1,0 +1,92 @@
+<!-- <nav class="navbar bg-body-tertiary">
+
+  <div class="main-div">
+    <div>
+      <h1 [routerLink]="['/Demo']">Think Food</h1>
+    </div>
+    <div *ngIf="showNavigationItems()">
+      <ul class="ul-div">
+
+        <li>
+
+          <button class="btn cart-button" type="button" (click)="navigateToCart()">
+            <i class="fa-solid fa-cart-shopping" [routerLink]="'/Cart'"></i>({{cartItems}})</button>
+        </li>
+        
+
+        <li>
+          <button class="btn logout-button" type="button" (click)="Logout()">Log Out
+            <i class="fa-solid fa-right-from-bracket"> </i></button>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <button class="dropbtn">Profile
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="/All-order">All Orders</a>
+         
+          <a (click)="viewCustomerDetails()" class="dropdown-item">View Details</a>
+          <a (click)="openChangepasswordPopup()" class="dropdown-item">Change Password</a>
+          <a (click)="editProfile()" class="dropdown-item">Edit Profile</a>
+          <a (click)="onDeleteAccount()" class="dropdown-item">Delete Account</a>
+          <a routerLink="/Cart">Cart({{cartItems}})</a>
+          <a routerLink="/list-faq">FAQ</a>
+
+          <a (click)="Logout()">Logout</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</nav> -->
+<nav class="navbar bg-body-tertiary">
+  <div class="main-div">
+    <div>
+      <h1 [routerLink]="['/Demo']">Think Food</h1>
+    </div>
+    <div *ngIf="showNavigationItems()">
+      <ul class="ul-div">
+        <li>
+          <button class="btn cart-button" type="button" (click)="navigateToCart()">
+            <i class="fas fa-cart-shopping"></i>({{cartItems}})
+          </button>
+        </li>
+        <li>
+          <button class="btn logout-button" type="button" (click)="Logout()">Log Out
+            <i class="fas fa-sign-out-alt"></i>
+          </button>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <button class="dropbtn">Profile
+          <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a routerLink="/All-order">
+            <i class="fas fa-clipboard-list"></i> All Orders
+          </a>
+          <a (click)="openChangepasswordPopup()">
+            <i class="fas fa-key"></i> Change Password
+          </a>
+          <a (click)="editProfile()">
+            <i class="fas fa-user-edit"></i> Edit Profile
+          </a>
+          <a (click)="onDeleteAccount()">
+            <i class="fas fa-trash-alt"></i> Delete Account
+          </a>
+          <a routerLink="/Cart">
+            <i class="fas fa-shopping-cart"></i> Cart ({{cartItems}})
+          </a>
+          <a routerLink="/list-faq">
+            <i class="fas fa-question-circle"></i> FAQ
+          </a>
+          <a (click)="Logout()">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

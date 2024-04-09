@@ -1,0 +1,109 @@
+.coupon-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 100px auto;
+    background-color: #ccb97ce5;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(163, 16, 16, 0.1);
+    box-sizing: border-box;
+}
+
+.create-coupon, .discount-percent {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.create-coupon-input, .discount-percentage-input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    width: 100%;
+}
+.expiry-date-input{
+    padding: 11px;
+    border-radius: 16px;
+    width: 33%;
+    font-size: medium;
+    font-weight: 500;
+}
+
+.btn-primary {
+    size: 0cap;
+    background-color: rgb(171, 177, 92);
+    border: none;
+    padding: 10px 16px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+
+
+
+// .coupon-container{
+//     display: flex;
+//     flex-direction: column;
+//     max-width: 400px;
+//     margin: 100px auto;
+//     background-color: #ccb97ce5;
+//     padding: 20px;
+//     text-align: center;
+//     border: 1px solid #ccc;
+//     border-radius: 8px;
+//     box-shadow: 0 0 10px rgba(163, 16, 16, 0.1);
+//     box-sizing: border-box;
+// }
+
+// .create-coupon{
+//     text-align: center;
+// }
+// .create-coupon-input{
+//     padding: 6px;
+//     border: 1px solid;
+//     border-radius: 5px;
+//     box-sizing: border-box;
+//     width: 157px;
+//     margin-bottom: 6px;
+//     margin-left: 6px;
+// }
+// .discount-percentage-input{
+
+//     padding: 7px;
+//     padding-left: 7px;
+//     padding-right: 1px;
+//     border: 1px solid;
+//     border-radius: 5px;
+//     width: 193px;
+//     margin-bottom: 6px;
+//     margin-left: 10px;
+//     margin-right: -45px;
+
+// }
+
+// .discount-percentage{
+//     text-align: center;
+//     padding: 20px;
+// }
+
+// .btn-primary{
+//     size: 0cap;
+//     background-color: rgb(171, 177, 92);
+//     border: none;
+//     padding: 7px 16px;
+//     border-radius: 7px;
+//     cursor: pointer;
+//     font-size: 16px;
+//     margin-top: 17px;
+//     margin-bottom: -14px;
+// }

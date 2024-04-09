@@ -1,0 +1,138 @@
+::ng-deep .mat-snack-bar-container.custom-snackbar {
+  background-color: white;
+  color: black;
+}
+
+.cart-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center horizontally */
+  text-align: center;
+  height: 100%; /* Ensure the container takes full height */
+}
+
+.cart-empty img {
+  width: 150px; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 20px; /* Add space between image and text */
+}
+
+/* Add this if you want to center vertically as well */
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.back-to-home {
+  margin-top: 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: xx-large;
+  margin-top: 25px;
+  
+}
+
+.item-image {
+  width: 80px;
+  height: 80px;
+  overflow: hidden;
+  margin-right: 20px;
+  object-fit: cover;
+}
+
+.cart-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #fff;
+
+  div {
+    display: flex;
+    justify-content: space-between ;
+    align-items: center;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+     
+    }
+    .item-name {
+      margin-bottom: 5px;
+      max-width: 50px;
+      max-height: 40px;
+      
+      
+    }
+
+    .quantity {
+      color: #666;
+    }
+
+    .price,
+    .subtotal {
+      margin-bottom: 5px;
+      max-width: 50px;
+      max-height: 40px;
+    }
+
+    button {
+      background-color: #b12c14;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+
+    .update-button {
+      background-color: #3498db;
+      margin-left: 10px; /* Adjust the margin as needed */
+      transition: background-color 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #2980b9;
+      }
+    }
+  }
+}
+
+.totalAmount {
+  margin-top: 20px;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  color: #27ae60;
+}
+.order-button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  padding-left: 45%;
+  margin: 0 auto;
+  background-color: #b12c14;
+  color: #fff;
+  border: none;
+  padding: 8px 12px; /* Adjust the padding values */
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: inline-block; /* Make it inline-block to fit the content */
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}

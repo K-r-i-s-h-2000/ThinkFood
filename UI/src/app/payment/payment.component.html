@@ -1,0 +1,83 @@
+<!--
+<section class="hero-section">
+  <div class="background-image"></div>
+
+    <div class="payment-form">
+
+    <h2>Payment Information</h2>
+    <form class="PaymentForm" [formGroup]="reactiveform" (ngSubmit)="paymentSubmit()">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" formControlName="cardNumber"  >
+      </div>
+      <div class="form-group">
+        <label for="expirationDate">Expiry Date</label>
+        <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY" formControlName="expirationDate" >
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVV</label>
+        <input type="text" id="cvc" name="cvc" placeholder="Enter CVC" formControlName="cvv"  >
+      </div>
+
+      <button type="submit">Pay Now</button>
+    </form>
+  </div>
+
+
+</section> -->
+
+<section class="hero-section" [ngClass]="{'blur-background': showSpinner}">
+  <div class="background-image"></div>
+
+  <div class="payment-form">
+    <form [formGroup]="reactiveform" (ngSubmit)="paymentSubmit()">
+    <div class="form-group">
+      <label for="cardNumber">Card Number</label>
+      <input type="text" id="cardNumber" name="cardNumber" placeholder="Enter your card number" formControlName="cardNumber">
+      <div *ngIf="reactiveform.get('cardNumber').errors?.['required']"><small> number is required.</small></div>
+      <div *ngIf="reactiveform.get('cardNumber').errors?.['pattern']"><small>Invalid card number format (should be 16 digits).</small></div>
+    </div>
+    <div class="form-group">
+      <label for="expirationDate">Expiry Date</label>
+      <input type="text" id="expirationDate" name="expirationDate" placeholder="MM/YY" formControlName="expirationDate">
+      <div *ngIf="reactiveform.get('expirationDate').errors?.['required']"><small>Expiry date is required.</small></div>
+      <div *ngIf="reactiveform.get('expirationDate').errors?.['pattern']"><small>Invalid expiry date format (should be MM/YY).</small></div>
+    </div>
+    <div class="form-group">
+      <label for="cvc">CVV</label>
+      <input type="text" id="cvc" name="cvc" placeholder="Enter CVC" formControlName="cvv">
+      <div *ngIf="reactiveform.get('cvv').errors?.['required']"><small>CVV is required.</small></div>
+      <div *ngIf="reactiveform.get('cvv').errors?.['pattern']"><small>Invalid CVV format (should be 3 or 4 digits).</small></div>
+    </div>
+    <button type="submit" [disabled]="showSpinner">Pay Now</button>
+    </form>
+  </div>
+
+<!-- spinner -->
+<div class="spinner" *ngIf="showSpinner"></div>
+
+<style>
+.spinner {
+  width: 56px;
+  height: 56px;
+  position: fixed;
+  top: 45%;
+  left: 66%;
+  border-radius: 50%;
+  border: 9px solid;
+  border-color: #dbdcef;
+  border-right-color: darkred;
+  animation: spinner-y7ej37 1s infinite linear;
+}
+
+@keyframes spinner-y7ej37 {
+  to {
+    transform: rotate(1turn);
+  }
+}
+</style>
+
+
+</section>
+
+

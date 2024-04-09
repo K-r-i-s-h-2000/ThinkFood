@@ -1,0 +1,88 @@
+
+
+.order-page {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-left: 20px;
+
+
+
+
+}
+
+.h1 {
+  margin-left: 1px;
+}
+
+.pagenation-division{
+  position: relative;
+}
+
+.order-details {
+  border: 1px solid #5c4b4b;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease-in-out;
+  width: 90%;
+}
+
+.order-details:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.order-details h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.ordered-items {
+  margin-top: 15px;
+  margin-left: 20px;
+}
+
+.ordered-item {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.item-info {
+  flex-grow: 1;
+}
+
+.item-image-container {
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+}
+
+.item-image {
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+//   width: 8%;
+// //  height: 50px; /* Set a fixed height for the images */
+//   object-fit: cover;
+}
+
+.status-done {
+  color: green;
+}
+
+.status-not-done {
+  color: red;
+}
+
+.ordered-items p {
+  margin: 8px 0;
+  color: #555;
+}

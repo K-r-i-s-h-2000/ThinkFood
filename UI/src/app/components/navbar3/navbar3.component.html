@@ -1,0 +1,29 @@
+<nav class="navbar bg-body-tertiary">
+
+    <div class="main-div">
+      <div>
+        <h1 >Think Food</h1>
+      </div>
+      <ul class="list-item">
+      <div *ngIf="showNavigationItems()">
+        <div class="dropdown">
+          <button class="dropbtn">Profile
+            <i class="fa-solid fa-user"></i>
+          </button>
+          <div class="dropdown-content">
+            <a (click)="onViewClick()">View Account</a><br>
+            <a (click)="onEditClick()">Edit Profile</a><br>
+            <a (click)=" onDeleteClick()">Delete Profile</a>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class="logout"> -->
+        <button class="logout-btn" (click)="logout()">Logout
+          <i class="fa-solid fa-right-from-bracket"></i>
+        </button>
+      <!-- </div> -->
+    </ul>
+    </div>
+
+  </nav>

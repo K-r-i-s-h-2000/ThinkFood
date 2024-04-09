@@ -1,0 +1,33 @@
+<app-navbar4></app-navbar4>
+<div class="coupon-container">
+    <h2>Update Coupon</h2>
+
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmit()">
+
+        <div class="create-coupon">
+            <label for="coupon" class="form-label">Coupon :</label>
+            <input type="text" class="create-coupon-input form-control" placeholder="Enter coupon code" formControlName="couponCode" required maxlength="9"/>
+            <div *ngIf="reactiveForm.get('couponCode').hasError('required') && reactiveForm.get('couponCode').touched">
+                <small>* Field is required</small>
+              </div>
+        </div>
+
+        <div class="discount-percent">
+            <label for="discount-percent" class="form-label">Discount% :</label>
+            <input type="number" placeholder="Enter discount percentage" class="discount-percentage-input form-control" formControlName="discountPercentage" required max="100"/>
+            <div *ngIf="reactiveForm.get('discountPercentage').hasError('required') && reactiveForm.get('discountPercentage').touched">
+                <small>* Field is required</small>
+              </div>
+        </div>
+
+        <div class="expiry-date">
+            <label for="expiry-date" class="form-label">Expiry Date :</label>
+            <input type="date" placeholder="Enter expiry date yyyy-MM-dd" class="expiry-date-input form-control" formControlName="expiryDate" />
+            <div *ngIf="reactiveForm.get('expiryDate').hasError('required') && reactiveForm.get('expiryDate').touched">
+                <small>* Field is required</small>
+              </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button> 
+
+    </form>

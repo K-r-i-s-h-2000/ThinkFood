@@ -1,0 +1,311 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: darkgoldenrod;
+  background-size: cover;
+  background-position: center;
+  font-family: Arial, sans-serif;
+}
+
+.main-container {
+  padding: 20px;
+}
+
+/* Navbar and other styles... */
+
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  .restaurant-image {
+    width: 400px;
+    height:300px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 20px;
+    border: 3px  #030303;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .restaurant-info {
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    p {
+      margin-bottom: 8px;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.category-list {
+  margin-bottom: 20px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1.2rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.items-list {
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    border: 1px solid #af8077;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+   /* Existing styles */
+
+/* Styles for item name, price, and description */
+.item-details {
+  flex: 1;
+
+  h3 {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: #333333;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 6px;
+    font-size: 1.2rem;
+    color: #666666;
+  }
+
+  .price {
+    color: #b12c14;
+    font-weight: bold;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .price::before {
+    content: '\20B9'; /* Indian Rupee symbol */
+    margin-right: 5px; /* Adjust spacing between symbol and price */
+    font-size: 1.2rem; /* Adjust size of currency symbol */
+  }
+
+  .description {
+    font-size: 1rem;
+    color: #444444;
+  }
+}
+
+
+
+    .item-image {
+      width: 100px; /* Adjust this to your desired width */
+      height: 100px; /* Adjust this to your desired height */
+      margin-right: 20px;
+      overflow: hidden;
+      border-radius: 5px;
+
+      img {
+        width: 100%; /* Set image width to 100% of its container */
+        height: 100%; /* Set image height to 100% of its container */
+        object-fit: cover;
+      }
+      .item-quantity {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+
+        input[type="button"] {
+          padding: 5px 5px;
+          font-size: 1rem;
+          margin-right: 5px;
+          margin-left: 5px;
+          border: 1px solid #ccc;
+          background-color: #fff;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #eee;
+          }
+        }
+
+        input[type="number"] {
+          width: 35px;
+          padding: 5px;
+          font-size: 1rem;
+          text-align: center;
+          border: 1px solid #ccc;
+          background-color: #fff;
+        }
+      }
+    }
+      button {
+        padding: 8px 16px;
+        font-size: 1rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #b12c14;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+
+    }
+
+
+  }
+
+
+button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #b12c14;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 20px auto 0px;
+
+
+  &:hover {
+    background-color: #0056b3;
+  }
+}
+
+
+.item {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.item-details {
+  flex: 1;
+  padding: 15px;
+}
+
+.item-image {
+  width: 150px; /* Adjust this to your desired width */
+  height: 100%; /* Match the height to the container */
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Styling for restaurant details */
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.restaurant-image {
+  width: 400px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 20px;
+  border: 3px solid #030303;
+}
+
+.restaurant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-info {
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 8px;
+    font-size: 1.2rem;
+  }
+}
+/* Your existing styles... */
+
+.additional-info {
+  margin-top: 15px;
+  font-size: 1.2rem;
+
+  p {
+    margin-bottom: 5px;
+  }
+
+  i {
+    margin-right: 5px;
+    color: #b12c14; /* Adjust icon color */
+  }
+}
+
+/* Rest of your styles... */
+/* Add margin-bottom to app-navbar2 */
+app-navbar2 {
+  margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+/* Adjust margin-top for .restaurant-details */
+.restaurant-details {
+  margin-top: 20px; /* Add space between navbar and restaurant details */
+}
+
+/* Existing styles for .restaurant-header... */
+.restaurant-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px; /* Maintain the existing margin-bottom */
+}
+
+/* Rest of your existing styles... */

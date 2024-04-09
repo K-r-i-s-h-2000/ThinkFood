@@ -1,0 +1,41 @@
+<app-navbar2></app-navbar2>
+<main>
+ 
+  <div class="restaurant-details">
+    <div class="restaurant-header">
+      <div class="restaurant-image" routerLink="">
+        <img src={{restaurantDetails.image}} alt="Restaurant Image" />
+      </div>
+      <div class="restaurant-info">
+        <h1>{{restaurantDetails.restaurantName}}</h1>
+        <p>{{restaurantDetails.restaurantDescription}}</p>
+        <div class="additional-info">
+          <p><i class="far fa-envelope"></i> Email: {{restaurantDetails.email}}</p>
+          <p><i class="fas fa-phone-alt"></i> Phone: {{restaurantDetails.phoneNumber}}</p>
+          <!-- <p><i class="fas fa-map-marker-alt"></i> Latitude: {{restaurantDetails.restaurantLatitude}}</p>
+          <p><i class="fas fa-map-marker-alt"></i> Longitude: {{restaurantDetails.restaurantLongitude}}</p> -->
+        </div>
+        <button (click)="openReviewsAndRatings()"><i class="fas fa-pencil-alt"></i> Write a Review</button>
+      </div>
+    </div>
+
+    <div class="items-list">
+      <h2><i class="fas fa-utensils"></i> Select Items</h2>
+      <div *ngFor="let item of itemsList" class="item">
+        <div class="item-details">
+          <h3 class="item-name">{{ item.itemName }}</h3>
+          <p class="price">{{ item.itemPrice }}</p>
+          <p class="description">{{ item.itemDescription }}</p>
+          <button (click)="createOrUpdateCart(item.menuId)">
+            <i class="fas fa-cart-plus"></i> Add to Cart
+          </button>
+        </div>
+
+        <div class="item-image">
+          <img src={{item.image}} alt="Item Image" />
+        </div>
+      </div>
+      <!-- Additional items can be added here -->
+    </div>
+  </div>
+</main>

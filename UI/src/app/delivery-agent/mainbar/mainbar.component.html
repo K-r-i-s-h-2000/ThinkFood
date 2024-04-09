@@ -1,0 +1,48 @@
+<div class="Dsidebar" *ngIf="delivery">
+    <!-- Delivery Information -->
+    <div class="deliveryInfo">
+      <h3>Delivery Agent Details</h3>
+      <div class="infoItem" >
+        <p>Delivery Name : {{delivery.deliveryName}}</p>
+        <p>Contact Number: {{delivery.deliveryContactNumber}}</p>
+        <p>Vehicle Number: {{delivery.vehicleNumber|uppercase}}</p>
+      </div>
+      <!-- <div class="statusSwitch">
+        <span>Status:</span>
+        <my-toggle-switch class="switchUpdate" [(ngModel)]="isDeliveryOpen" (clicked)="updateStatus()"></my-toggle-switch>
+        <span>{{ isDeliveryOpen == 'OPEN' ? 'OPEN' : 'CLOSE' }}</span>
+      </div> -->
+      <!-- <div class="statusSwitch">
+        <span>Status     :</span>
+        <label class="switch"  >
+          <mat-slide-toggle  (change)="updateStatus()" ></mat-slide-toggle>
+        </label>
+        <span>{{ isDeliveryOpen=='OPEN' ? 'OPEN' : 'CLOSE' }}</span>
+      </div>
+    </div> -->
+
+    <div class="statusSwitch">
+      <span>Status:</span>
+      <label class="switch">
+        <input type="checkbox" (change)="updateStatus()"  />
+        <div  ></div>
+        <span class="slider"></span>
+      </label>
+      <span>{{ isDeliveryOpen == 'OPEN' ? 'OPEN' : 'CLOSE' }}</span>
+    </div>
+    <!-- Line Divider  -->
+    ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    <div class="divider"></div>
+    <!-- Other Information -->
+    <h2>Other Information</h2>
+     <div class="otherInfoSub">
+      <p>Email: {{delivery.email}}</p>
+      <p>Total Orders:{{orderCount}}</p>
+    </div>
+
+    <!-- Buttons -->
+     <div class="buttons">
+      <button (click)="update()">Update</button>
+      <button (click)="softDelete()">Delete Account</button>
+    </div>
+  </div>

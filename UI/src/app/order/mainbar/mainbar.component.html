@@ -1,0 +1,78 @@
+<h1 style="font-weight: 700;">ORDERS</h1>
+<div [hidden]="status1">
+ <h2> <strong> Cart is Empty </strong></h2>
+ <div class="order-empty">
+    <img [src]= "'assets/images/empty_cart.jpg'" alt="Empty Cart Image">
+   <h2><strong></strong><br />Go back to <a routerLink = "/Demo">Home Page.</a></h2>
+
+    </div>
+  </div>
+  <div *ngIf="cart" class="order-page">
+  <!-- <button type="button" (click)="placeOrder()" *ngIf="isHiddenButton" class="btn btn-primary">Place order</button> -->
+
+  <div class="cart-items" *ngIf="!isHidden">
+    <h2>Cart Items</h2>
+    <div *ngFor="let item of cartItems" class="cart-item">
+      <div class="item-image-container">
+        <img class="item-image" [src]="item.itemImage" alt="{{ item.itemName }}" />
+      </div>
+      <div class="item-details">
+        <p><strong>Name:</strong> {{ item.itemName }}</p>
+        <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        <p><strong>Price:</strong> {{ item.itemPrice | currency: 'INR'  }}</p>
+        <p><strong>Subtotal:</strong> {{ item.subtotal | currency: 'INR' }}</p>
+
+
+      </div>
+    </div>
+    <p class="cart-total"  style="font-size: large;"><strong>Total Amount: </strong> {{ totalAmount | currency: 'INR'  }}</p>
+
+  </div>
+
+
+  <div *ngIf="coupon && !isHidden">
+    <h2>Order Details</h2>
+    <p><strong>Coupon Code:</strong> {{ coupon.couponCode }}</p>
+    <p><strong>Discount Percentage:</strong> {{ coupon.discountPercentage }}%</p>
+    <p><strong>Total Amount:</strong> {{ calculateTotalAmount() | currency: 'INR' }}</p>
+
+
+  </div>
+
+
+  <p *ngIf="coupon"><strong>Discounted Amount:</strong> {{ calculateDiscountedAmount() }}</p>
+  <button type="button" (click)="placeOrder()" *ngIf="isHiddenButton" class="btn btn-primary">Place order</button>
+
+  </div>
+
+  <div class="confirm-order" *ngIf="isHidden">
+  <h2>Confirm Order</h2>
+  <p *ngIf="coupon"><strong>Coupon Code:</strong> {{ coupon.couponCode }}</p>
+  <p *ngIf="coupon"><strong>Discount Percentage:</strong> {{ coupon.discountPercentage }}%</p>
+  <p ><strong>Total Amount:</strong> {{ calculateTotalAmount() | currency: 'INR'  }}</p>
+  <p *ngIf="coupon"><strong>Discounted Amount: Rs.</strong> {{ calculateDiscountedAmount() | currency: 'INR'  }}</p>
+  <p ><strong>Tax Amount :</strong> {{ calculateGst1() | currency: 'INR'  }}</p>
+  <p style="font-size: medium;"><strong>Total Amount with Taxes: Rs.</strong>{{calculateGst() | currency: 'INR' }} </p>
+  <!-- <button *ngIf="coupon" class="remove-coupon-button" (click)="removeCoupon()">Remove coupon</button> -->
+
+
+  <div class="item-images-container1">
+    <div *ngFor="let item of cartItems" class="item-image-container1">
+      <img class="item-image1" [src]="item.itemImage">
+     
+    </div>
+  </div>
+
+  <button *ngIf="coupon" class="remove-coupon-button" (click)="removeCoupon()">Remove coupon</button>
+
+      <button class="confirm-order-button" (click)="confirmOrder()">Order</button>
+
+    </div>
+
+  <div [hidden]="showUp" class="confirm-text">
+  <h3>Thank you for the order. You will be redirected to payment shortly</h3>
+
+
+</div>
+
+

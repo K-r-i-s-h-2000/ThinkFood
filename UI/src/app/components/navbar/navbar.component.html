@@ -1,0 +1,14 @@
+<nav class="navbar bg-body-tertiary">
+    <div class="main-div">
+      <div>
+      <h1>Think Food</h1>
+    </div>
+    <div *ngIf="showNavigationItems()">
+      <ul class="ul-div">
+        <li [routerLink]="['/Home']" *ngIf="shouldShowHome()">Home</li>
+        <li [routerLink]="['/Login']" *ngIf="shouldShowLogin()">Login</li>
+        <li [routerLink]="['/Sign-up']" *ngIf="shouldShowSignUp()">Sign Up</li>
+      </ul>
+    </div>
+  </div>
+  </nav>

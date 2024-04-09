@@ -1,0 +1,10 @@
+
+
+<!-- <div class="star-rating">
+    <span *ngFor="let _ of [1, 2, 3, 4, 5]" class="star" [class.full]="rating >= _" (click)="onClick(_)">&#9733;</span>
+</div> -->
+  
+<div class="star-rating">
+    <!-- Iterate through the stars and display them -->
+    <span *ngFor="let star of stars" (click)="setRating(star)" [class.active]="star <= rating">&#9733;</span>
+</div>

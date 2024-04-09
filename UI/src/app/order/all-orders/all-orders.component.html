@@ -1,0 +1,62 @@
+<app-navbar2></app-navbar2>
+<h1><strong>ORDER HISTORY</strong></h1>
+<div class="order-page">
+  <div class="pagenation-division">
+  <mat-paginator [length]="order.length" [pageSize]="pageSize" (page)="onPageChange($event)"></mat-paginator>
+</div>
+  <div *ngIf="pagedOrder.length > 0">
+    <div *ngFor="let orderItem of pagedOrder" class="order-details" (click)="navigateToOrderDetails(orderItem.id)">
+      <!-- Add a click event and pass orderItem.id to the function -->
+      <h2><strong> Order Details </strong> </h2>
+
+      <p *ngIf="orderItem.preparationStatus === 'PREPARATION'" style="color: green;">
+        <strong>Delivery Status:</strong> {{ orderItem.preparationStatus}}
+      </p>
+
+      <p *ngIf="orderItem.preparationStatus === 'OUT_FOR_DELIVERY'" style="color: rgb(223, 13, 13);">
+        <strong>Delivery Status:</strong> {{ orderItem.preparationStatus }}
+      </p>
+
+      <p *ngIf="orderItem.preparationStatus === 'DELIVERED'" style="color: rgb(0, 109, 5);">
+        <strong>Delivery Status:</strong> {{ orderItem.preparationStatus }}
+      </p>
+
+      <p *ngIf="orderItem.couponCode; else noCouponApplied">
+        <strong>Coupon Code:</strong> {{ orderItem.couponCode }}
+      </p>
+      <ng-template #noCouponApplied>
+        <p><strong>No Coupon Applied</strong></p>
+      </ng-template>
+
+      <p><strong>Coupon Discount:</strong> {{ orderItem.couponDiscount  }}%</p>
+      <p><strong>Total Cost:</strong> {{ orderItem.totalCost | currency: 'INR' }}</p>
+      <p><strong>Ordered date:</strong> {{ orderItem.date | date:'dd-MM-yyyy' }}</p>
+      <p><strong>Ordered Time:</strong> {{ orderItem.date  | date: 'hh:mm a' }}</p>
+
+      <div class="ordered-items" *ngFor="let item of orderItem.orderedItems" class="ordered-items">
+        <div class="ordered-item">
+          <div class="item-info">
+            <p><strong>Name:</strong> {{ item.name }}</p>
+            <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+          </div>
+          <div class="item-image-container">
+          <img class="item-image" [src]="item.itemImage">
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+      <!-- <h3>Ordered Items</h3>
+      <div >
+        <div class="ordered-item">
+          <img class="item-image" [src]="item.itemImage">
+          <p><strong>Name:</strong> {{ item.name }}</p>
+          <p><strong>Quantity:</strong> {{ item.quantity }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->

@@ -1,0 +1,89 @@
+<app-navbar4></app-navbar4>
+
+<div class="container">
+    <h2>Add Item</h2>
+    <form [formGroup]="itemForm" (ngSubmit)="createItem()">
+      <div>
+        <label for="itemName">Item Name:</label>
+        <input type="text" id="itemName" formControlName="itemName" />
+      </div>
+      <div>
+        <label for="categoryId">Category:</label>
+        <select id="categoryId" formControlName="categoryId">
+          <option *ngFor="let category of categories" [value]="category.id">{{ category.categoryName }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="image">Food Image:</label>
+        <input type="text" id="image" formControlName="image" />
+      </div>
+      <div>
+        <button type="submit">Save</button>
+      </div>
+    </form>
+</div>
+
+<!-- <div class="container">
+  <h2>Categories</h2>
+  <ul>
+    <li *ngFor="let category of categories" (click)="loadItemsByCategory(category.id)">
+      {{ category.categoryName }}
+    </li>
+  </ul>
+</div> -->
+
+<h2 style="text-align: center;">Categories</h2>
+<div class="scroll-container" style="max-width:100%; overflow-x: auto; white-space: nowrap;">
+  <div *ngFor="let category of categories" style="display: inline-block;"  (click)="loadItemsByCategory(category.id)">
+      <p>{{category.categoryName}}</p>
+      <img src="{{category.image}}"  style="width: 144px; height: 145px; padding: 5px;">
+  </div>
+</div>
+
+<!-- <div *ngIf="selectedCategory" class="container">
+  <h2>Items for {{ selectedCategory.categoryName }}</h2>
+  <ul>
+    <li *ngFor="let item of items">
+      {{ item.itemName }}
+      <button (click)="editItem(item)">Edit</button>
+      <button (click)="deleteItem(item.id)">Delete</button>
+    </li>
+  </ul>
+</div> -->
+
+
+<div *ngIf="selectedCategory" class="item-container">
+  <h2>Items for {{ selectedCategory.categoryName }}</h2>
+  <ul class="item-grid">
+    <li *ngFor="let item of items" class="item-item">
+      <div class="item-content">
+        <img [src]="item.image" alt="{{ item.itemName }}" class="item-image">
+        <div class="item-details">
+          <p class="item-name">{{ item.itemName }}</p>
+          <button (click)="openUpdateItemDialog(item)">Edit</button>
+          <button (click)="deleteItem(item.id)">Delete</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+
+<!-- <div *ngIf="editingItem" class="container">
+  <h2>Edit Item</h2>
+  <form [formGroup]="editingForm" (ngSubmit)="updateItem()">
+    <div>
+      <label for="itemName">Item Name:</label>
+      <input type="text" id="itemName" formControlName="itemName" />
+    </div>
+    <div>
+      <label for="image">Food Image:</label>
+      <input type="text" id="image" formControlName="image" />
+    </div>
+    <div>
+      <button type="submit">Update</button>
+    </div>
+  </form>
+</div> -->
+

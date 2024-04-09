@@ -1,0 +1,37 @@
+
+<div class="CurrentContainer">
+  <div *ngIf="deliveryDetails">
+    <div class="CollectMessage" *ngIf="deliveryDetails.deliveryStatus==='OUT_FOR_DELIVERY'"> THE ORDER IS READY! 
+      <p>Please Collect your Order.</p> 
+    </div>
+    <h2>Delivery Details</h2>
+    <div class="OrderedItems">
+      <h4>Items</h4>
+      <ul>
+        <li *ngFor="let item of deliveryDetails.deliveryItems">
+          {{ item.itemName |uppercase }} x {{ item.quantity }}
+        </li>
+      </ul>
+    </div>
+    <div class="distance">
+      <p> Total Distance     : {{deliveryDetails.totalDistance}} km</p>
+    </div>
+    <div>
+      <h4 class="CurrentStatus">Status: {{ getStatusText(deliveryDetails.deliveryStatus) }}</h4>
+    </div>
+    <div>
+      <button *ngIf="deliveryDetails.deliveryStatus === 'OUT_FOR_DELIVERY'" (click)="updateStatus()">Order is Collected.</button>
+      <button *ngIf="deliveryDetails.deliveryStatus === 'ON_THE_WAY'" (click)="updateStatusDelivered()">Order is Delivered.</button>
+    </div>
+    <div class="MainDetails">
+      <p>Customer Name  : {{ deliveryDetails.customerName |uppercase }}</p>
+      <p>Restaurant Name: {{ deliveryDetails.restaurantName |uppercase }}</p>
+      <p>End Address    : {{ deliveryDetails.endAddress |uppercase }}</p>
+      <p> Date          : {{deliveryDetails.createdDateTime |date:'dd-MM-yyyy'}}</p>
+    </div>   
+  </div>
+  <div class="noOrder" *ngIf="!deliveryDetails">
+    <img [src]="getStatusImage()" alt="Delivery Status Image">
+    <p>No Orders are found</p>
+  </div>
+</div>

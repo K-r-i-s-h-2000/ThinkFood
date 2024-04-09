@@ -1,0 +1,40 @@
+.DeliveredContainer{
+    background-color: rgba(255, 255, 255, 0.9);
+    padding:20px;
+}
+.deliveredTitle {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #000; // Set your desired color
+    margin-top: 9px;
+  }
+  
+  .deliveredContent {
+    p {
+      font-size: 18px;
+      text-align: center;
+      font-family: 'YourFont', sans-serif;
+      margin-top: 5px; // Replace 'YourFont' with the desired font
+      // Add any other content styles as needed
+      margin-bottom: 7px;
+
+  }
+}
+  
+  .deliveredAction {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    
+  
+    .deliveredOK {
+      background-color: #b12c14; // Red color
+      color: #fff; // White text color
+      margin-right: 90px;
+    }
+  }
+
+  

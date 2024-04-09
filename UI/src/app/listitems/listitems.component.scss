@@ -1,0 +1,135 @@
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between items */
+  justify-content: center; /* Center items horizontally */
+}
+
+.item {
+  flex: 0 1 calc(30% - 20px);
+  max-width: calc(30% - 20px);
+  height: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  border: 1px solid rgb(87, 17, 29);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0px 2px 4px rgba(192, 44, 44, 0.1);
+  position: relative;
+  margin-top: 20px;
+  background-color: #fff; /* White background for items */
+}
+
+@media screen and (max-width: 992px) {
+  .item {
+    flex: 0 1 calc(50% - 20px); /* Adjust for smaller screens */
+    max-width: calc(50% - 20px); /* Adjust the max-width for smaller screens */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .item {
+    flex: 0 1 calc(100% - 20px); /* Adjust for even smaller screens */
+    max-width: calc(100% - 20px); /* Adjust the max-width for even smaller screens */
+  }
+}
+
+
+.restaurants img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fill the container while maintaining aspect ratio */
+  border-radius: 5px;
+}
+
+
+.restaurants h3 {
+  margin: 10px 0 5px;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+}
+.item h3 {
+  margin: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%; /* Ensure the item name doesn't wrap */
+  font-weight: bold; /* Apply bold font weight */
+  text-transform: capitalize; /* Capitalize each word */
+}
+
+
+.item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0; /* Rounded corners for the image */
+}
+
+.item p {
+  margin: 5px 0;
+  text-align: center;
+  color: #777;
+}
+
+.item button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  background-color: #912525;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.item button:hover,
+.restaurants button:hover {
+  background-color: #555;
+  z-index: 1; /* Ensure the button appears on top when hovered */
+}
+
+
+/* Styles for the FontAwesome icon */
+.fa-shopping-basket:before {
+  content: "\f291"; /* Unicode of the shopping basket icon */
+  margin-right: 10px; /* Space between icon and text */
+}
+/* Styles for the heading */
+.heading {
+  padding: 15px;
+  font-size: 2.5rem; /* Adjust the size as needed */
+  font-weight: bold;
+  color: #0c0c0c; /* Your preferred text color */
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Styles for the FontAwesome icon */
+.heading i {
+  margin-right: 10px; /* Space between icon and text */
+  font-size: 1.5rem; /* Adjust the icon size */
+}
+.no-Items h2 {
+  color: #333;
+  font-size: 24px;
+  margin: 45px;
+  text-align: center;
+}
+.item i {
+  margin-right: 5px; /* Adjust spacing between icon and item name */
+  color: #912525; /* Change the color of the icon */
+  font-size: 20px; /* Adjust the icon size */
+}

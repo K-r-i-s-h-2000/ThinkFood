@@ -1,0 +1,33 @@
+
+ <main>
+
+
+    <div class="edit-profile-form">
+        <span class="close-icon" (click)="closeForm()">&times;</span>
+        <h2>Profile Data</h2>
+        <div class="profile-picture-container">
+            <img [src]="userDetails.image" alt="Profile Picture" class="profile-picture">
+        </div>
+
+        <div class="form-group">
+            <label for="customerName">Full Name</label>
+            <p>{{ userDetails.customerName }}</p>
+        </div>
+        <div class="form-group">
+            <label for="customerLongitude">Longitude</label>
+            <p>{{ userDetails.customerLongitude }}</p>
+        </div>
+        <div class="form-group">
+            <label for="customerLatitude">Latitude</label>
+            <p>{{ userDetails.customerLatitude }}</p>
+        </div>
+        <div class="form-group">
+            <label for="customerDateOfBirth">Date of Birth</label>
+            <p>{{ userDetails.customerDateOfBirth | date:'shortDate' }}</p>
+        </div>
+        <div class="form-group">
+            <label for="customerGender">Gender</label>
+            <p>{{ userDetails.customerGender }}</p>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,12 @@
+
+<div class="logoutDeliveryContainer">
+
+    <h1 class="logoutTitle" mat-dialog-title>Delete Account Confirmation</h1>
+    <div class="logoutContent" mat-dialog-content>
+      <p>Are you sure you want to delete your Account?</p>
+    </div>
+    <div class="logoutAction" mat-dialog-actions>
+      <button class="logoutYes" mat-button [mat-dialog-close]="true" (click)=" softDelete()">Yes, I am Sure</button>
+      <button class="logoutNo" mat-button [mat-dialog-close]="false" >No, I dont want to</button>
+    </div>
+</div>

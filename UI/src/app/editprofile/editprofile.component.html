@@ -1,0 +1,70 @@
+<form [formGroup]="reactiveform" (ngSubmit)="onSubmit2()">
+  <span class="close-icon" (click)="closeForm()">&times;</span>
+  <!-- <div class="profile-picture-container">
+
+    <img [src]="url" alt="Profile Picture" class="profile-picture"  height="150px" width="150px">
+    <input
+     type="file"
+      id="img"
+       style="display:none"
+       accept="image/*"
+       (change)="onSelect($event)"
+        />
+      <label for="img">Upload Image</label>
+</div> -->
+<div class="form-group">
+  <label for="customerName">Name</label>
+  <input type="text" id="customerName" name="customerName" formControlName="customerName">
+  <div *ngIf="reactiveform.get('customerName').errors?.['required']">
+    <small>Name is required</small>
+  </div>
+</div>
+
+  <div class="form-group">
+    <label for="customerAddress">Address</label>
+    <input type="text" id="customerAddress" name="customerAddress" formControlName="customerAddress">
+    <div *ngIf="reactiveform.get('customerAddress').errors?.['required']">
+      <small>Address is required</small>
+    </div>
+    <div *ngIf="reactiveform.get('customerAddress').errors?.['minlength']">
+      <small>Address should be at least 5 characters long</small>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="customerLongitude">Longitude</label>
+    <input type="text" id="customerLongitude" name="customerLongitude" formControlName="customerLongitude">
+    <div *ngIf="reactiveform.get('customerLongitude').errors?.['pattern']">
+      <small>Enter a valid longitude (-180 to 180)</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="customerLatitude">Latitude</label>
+    <input type="text" id="customerLatitude" name="customerLatitude" formControlName="customerLatitude">
+    <div *ngIf="reactiveform.get('customerLatitude').errors?.['pattern']">
+      <small>Enter a valid latitude (-90 to 90)</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="customerDateOfBirth">Date of Birth</label>
+    <input type="date" id="customerDateOfBirth" name="customerDateOfBirth" formControlName="customerDateOfBirth">
+    <div *ngIf="reactiveform.get('customerDateOfBirth').errors?.['pattern']">
+      <small>Enter a valid date (YYYY-MM-DD)</small>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="customerGender">Gender</label>
+    <select id="customerGender" name="customerGender" formControlName="customerGender">
+      <option value="" disabled selected>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select>
+    <div *ngIf="reactiveform.get('customerGender').errors?.['pattern']">
+      <small>Choose a valid gender (male, female, other)</small>
+    </div>
+  </div>
+  <button type="submit">Save Changes</button>
+</form>
+
+

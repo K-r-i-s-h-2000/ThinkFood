@@ -1,0 +1,90 @@
+.scroll-container {
+    background-color: #fff;
+    padding: 10px;
+}
+/* Scrollbar Track */
+.scroll-container::-webkit-scrollbar-track {
+    background-color: #ebe5e5;
+}
+
+/* Scrollbar Handle */
+.scroll-container::-webkit-scrollbar-thumb {
+    background-color:#b12c14 ;
+    // background: linear-gradient(135deg, #ff9d6c, #ff6c8c);
+    border-radius: 10px;
+}
+
+/* Horizontal Scrollbar */
+.scroll-container::-webkit-scrollbar {
+    height: 10px;
+    width: 10px;
+
+}
+
+
+/* Container Style */
+// .scroll-container {
+//     background-color: #fff;
+//     padding: 10px;
+//     white-space: nowrap;
+//     overflow-x: auto;
+//     display: flex;
+//     gap: 20px; /* Adjust the gap between items */
+//     align-items: center; /* Vertically center items */
+// }
+
+// .scroll-container div {
+//     flex-shrink: 0; /* Prevent items from shrinking */
+//     text-align: center;
+// }
+
+// .scroll-container p {
+//     text-align: center; /* Center the text */
+//     margin: 5px 0; /* Adjust margin as needed */
+//     font-size: 14px; /* Adjust font size */
+//     color: #e61212; /* Text color */
+// }
+
+// .scroll-container img {
+//     width: 100px;
+//     height: 150px;
+//     padding: 5px;
+//     border: 1px solid pink;
+//     cursor: pointer; /* Show pointer cursor on hover */
+//     display: block; /* Remove extra space below the image */
+//     margin: 0 auto; /* Center the image horizontally */
+// }
+.scroll-container {
+    background-color: #fff;
+    padding: 10px;
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    gap: 100px; /* Adjust the gap between items */
+    align-items: center; /* Vertically center items */
+}
+
+.scroll-container div {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    text-align: center;
+}
+
+.scroll-container p {
+    text-align: center; /* Center the text */
+    margin: 5px 0; /* Adjust margin as needed */
+    font-size: 14px; /* Adjust font size */
+    color: #0e0606; /* Text color */
+    font-weight: 500;
+    
+}
+
+.scroll-container img {
+    width: 100px;
+    height: 100px; /* Set a square dimension for the circular frame */
+    object-fit: cover; /* Maintain aspect ratio while covering the container */
+    border-radius: 50%; /* Apply circular border-radius */
+    padding: 5px;
+    cursor: pointer; /* Show pointer cursor on hover */
+    display: block; /* Remove extra space below the image */
+    margin: 0 auto; /* Center the image horizontally */
+}

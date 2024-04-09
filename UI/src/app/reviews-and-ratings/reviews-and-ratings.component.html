@@ -1,0 +1,60 @@
+<app-navbar2></app-navbar2>
+
+<div  class="container">
+  <h2>Add Reviews</h2>
+  <form [formGroup]="reviewForm" (ngSubmit)="submitReviewAndRating()">
+    <div>
+      <label for="review">Review:</label>
+      <textarea id="review" name="review" formControlName="review" placeholder="Write your review here..."></textarea>
+      <div *ngIf="reviewForm.get('review').hasError('required') && reviewForm.get('review').touched">
+        <small>Review is required.</small>
+      </div>
+    </div>
+    <div>
+      <label for="rating">Rating:</label>
+      <app-star-rating></app-star-rating>
+      <!-- <input type="number" id="rating" name="rating" formControlName="rating" min="1" max="5"> -->
+      <!-- <div *ngIf="reviewForm.get('rating').hasError('required') && reviewForm.get('rating').touched">
+        <small>Rating is required.</small>
+      </div>
+      <div *ngIf="reviewForm.get('rating').hasError('min') && reviewForm.get('rating').touched">
+        <small>Rating must be at least 1.</small>
+      </div>
+      <div *ngIf="reviewForm.get('rating').hasError('max') && reviewForm.get('rating').touched">
+        <small>Rating must be at most 5.</small>
+      </div> -->
+    </div>
+    <div>
+      <button type="submit">Save</button>
+    </div>
+  </form>
+</div>
+
+
+<div *ngIf="reviewsAndRatingsList.length > 0; else noData" class="reviews-container">
+  <h2>{{ restaurantName }} Reviews</h2>
+  <div class="reviews-grid">
+  <div *ngFor="let review of reviewsAndRatingsList" class="review">
+    <div  class="review-content">
+    <p><strong>Customer:</strong> {{ review.customerName }}</p>
+    <p><strong>Rating:</strong> {{ review.rating }}</p>
+    <p><strong>Review:</strong> {{ review.review }}</p>
+    <p>{{ review.formattedDate }}</p>
+    </div>
+
+    <!-- Display update and delete buttons only for the reviews of the current user -->
+    <div *ngIf=" currentUser == review.customerId">
+      <!-- <button (click)="updateReview(review.id)">Edit</button> -->
+      <button (click)="openUpdateDialog(review.id)">Edit review</button>
+      <button (click)="deleteReview(review.id)">Delete review</button>
+    </div>
+  </div>
+  </div>
+</div>
+
+<ng-template #noData>
+  <p>No reviews and ratings available.</p>
+</ng-template>
+
+
+

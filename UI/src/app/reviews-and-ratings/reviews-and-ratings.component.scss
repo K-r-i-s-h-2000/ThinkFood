@@ -1,0 +1,258 @@
+
+// .container {
+//   max-width: 800px;
+//   margin: 20px auto;
+//   padding: 20px;
+//   border: 1px solid black;
+//   border-radius: 8px;
+
+// }
+
+
+// // div {
+// //     padding: 20px;
+// //     border-radius: 8px;
+// //     width: 50%;
+// //     margin: 10px auto 0;
+// //   }
+
+//   h2 {
+//     color: black;
+//   }
+
+//   // form {
+//   //   margin-top: 15px;
+//   //   border-radius: 8px;
+//   //   border: 1px solid black;
+//   // }
+
+//   // label {
+//   //   color: black;
+//   // }
+
+//   // .review-rating{
+//   //   display: flex;
+//   // }
+
+//   // .reviews-container {
+//   //   width: 80%;
+//   //   margin: 0 auto;
+//   // }
+
+//   // textarea, input {
+//   //   width: 100%;
+//   //   padding: 8px;
+//   //   margin-top: 5px;
+//   //   margin-bottom: 10px;
+//   //   border: 1px solid black;
+//   //   border-radius: 4px;
+//   //   background-color: white;
+//   //   color: #000000;
+//   // }
+
+//   button {
+//     background-color: #b12c14;
+//     color: #FFFFFF;
+//     padding: 10px 15px;
+//     border: none;
+//     border-radius: 4px;
+//     cursor: pointer;
+//     margin-right: 10px;
+//   }
+
+//   button:hover {
+//     background-color: #0056b3;
+//   }
+
+//   input.ng-invalid.ng-touched{
+//     border: red 1px solid;
+//   }
+
+//   form small {
+//     color: red;
+//     font-size: 12px;
+//     margin-top: 5px;
+//     display: block;
+//   }
+
+//   // .review {
+//   //   background-color: aliceblue;
+//   //   width: 570px;
+//   // }
+
+//   form {
+//     margin-bottom: 20px;
+
+//     div {
+//       margin-bottom: 15px;
+
+//       label {
+//         display: block;
+//         font-weight: bold;
+//         margin-bottom: 5px;
+//       }
+
+//       input {
+//         width: 100%;
+//         padding: 8px;
+//         box-sizing: border-box;
+//       }
+
+//       textarea  {
+//         width: 100%;
+//         padding: 8px;
+//         box-sizing: border-box;
+//       }
+//     }
+
+//     button {
+//       padding: 10px;
+//       background-color: #b12c14;
+//       color: white;
+//       border: none;
+//       border-radius: 4px;
+//       cursor: pointer;
+//     }
+
+//     button:hover {
+//       background-color: #0056b3;
+//     }
+//   }
+
+//   .reviews-container {
+//     max-width: 800px;
+//     margin: 0 auto;
+//   }
+
+//   .reviews-grid {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+//     gap: 20px;
+//   }
+
+//   .review {
+//     border: 1px solid #ccc;
+//     padding: 15px;
+//     margin: 0;
+//   }
+
+//   .review-content {
+//     margin-bottom: 10px;
+//   }
+
+//   .buttons-container {
+//     text-align: right;
+//   }
+
+//   @media (max-width: 600px) {
+//     .reviews-grid {
+//       grid-template-columns: 1fr;
+//     }
+//   }
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+h2 {
+  color: black;
+}
+
+button {
+  background-color: #b12c14;
+  color: #FFFFFF;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input.ng-invalid.ng-touched, textarea.ng-invalid.ng-touched {
+  border: red 1px solid;
+}
+
+form small {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+form label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+form input, form textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+}
+
+form button {
+  padding: 10px;
+  background-color: #b12c14;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.reviews-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.reviews-grid {
+  gap: 20px;
+}
+
+.review {
+    border: 2px solid rgb(196, 182, 184);
+    padding: 15px;
+    margin: 0;
+    margin: 10px;
+    border-radius: 18px
+}
+
+.review-content {
+  margin-bottom: 10px;
+}
+
+.buttons-container {
+  text-align: right;
+}
+
+@media (max-width: 600px) {
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Adjustments for single-column reviews */
+.review {
+  grid-column: span 1;
+}
+

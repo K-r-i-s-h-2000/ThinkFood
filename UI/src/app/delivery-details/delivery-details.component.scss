@@ -1,0 +1,120 @@
+.footer {
+    position:relative;
+    bottom: -40px;
+    width: 100%;
+    height: 30px; /* Adjust this value to your footer height */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin-top:1px;
+  }
+  .containerBox {
+    border: 1px solid #ddd; /* Light grey border color */
+    padding: 20px; /* Adjust the padding as needed */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px auto; /* Center the box horizontally with some top and bottom margin */
+    width: 60%; /* Adjust the width as needed */
+    height: 55%;
+  }
+
+  .statusImage {
+    text-align: center;
+    margin-top: 0%;
+  }
+  
+
+  .statusImage img {
+    width: 25%; /* Adjust the width as needed */
+    height: 30%; /* Adjust the height as needed */
+  }
+  
+  .statusImage p {
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 'Your Beautiful Font', sans-serif;
+    color: rgb(236, 136, 136);
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  .DeliveryTime{
+    font-weight: bold;
+    font-size: 20px;
+    color: #0e1316; /* Nice color for the delivery time */
+    font-family: 'Your Beautiful Font', sans-serif;
+    text-align: center;
+  }
+  
+
+  .DeliveryTime p:first-child {
+    font-size: 16px; /* Adjust the size as needed */
+  }
+  
+  .DeliveryTime p:last-child {
+    font-weight: bolder;
+    font-size: 20px; /* Adjust the size as needed */
+    margin-bottom: 20px;
+    color: #b12c14;
+  }
+  
+  .OrderedItems {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+
+  .OrderedItems h4 {
+    font-size: 18px;
+    margin-top: 20px;
+    font-family: 'Your Beautiful Font', sans-serif;
+  }
+  
+  .itemContainer {
+    margin-left: 35px;
+    font-family: 'Your Beautiful Font', sans-serif;
+  }
+  
+  
+  
+  .item {
+    background-color: #ecf0f1; /* Background color for each item */
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .item p {
+    margin-top: 0;
+    font-size: 20px;
+    color: #2c3e50; /* Nice color for the item text */
+    
+  }
+  
+  .DMainDetails {
+    margin-top: 30px;
+    margin-left: 50px;
+  }
+  
+  /* Optional: Additional styling for other elements */
+  .DMainDetails p {
+    font-size: 18px;
+    color: #363b3b; /* Nice color for other details */
+    font-family: 'Your Beautiful Font', sans-serif;
+  }
+
+
+  .statusImageUnknown{
+    text-align: center;
+    margin-top: 20px;
+  }
+.statusImageUnknown img {
+  width: 50%; 
+  height: 60%; 
+  margin-bottom: 10px;
+}
+
+.statusImageUnknown p {
+  font-family: 'Your Beautiful Font', sans-serif;
+  color: rgb(82, 4, 4);
+  font-size: 25px;
+  margin-top: 10px;
+}

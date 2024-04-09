@@ -1,0 +1,12 @@
+<app-navbar2></app-navbar2>
+<h2>Frequently asked questions (FAQs)</h2>
+<div class="accordion-container">
+    <div *ngFor="let query of queries | keyvalue" class="accordion-item">
+      <button class="accordion-header" (click)="toggleAccordion(query.key)" [ngClass]="{'active': selectedId === query.key}">
+        {{query.value}} <span class="icon" [ngClass]="{'active': selectedId === query.key}">+</span>
+      </button>
+      <div class="accordion-content" *ngIf="selectedId === query.key">
+        <p>{{ response?.response }}</p>
+      </div>
+    </div>
+</div>

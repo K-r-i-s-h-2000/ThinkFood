@@ -1,0 +1,12 @@
+/* sidebar.component.css */
+
+.sidebar {
+    width: 70%; /* Use a percentage value for relative width */
+    background-color: #333;
+    color: #fff;
+    padding: 22px;
+    height: 100vh; /* Use viewport height for full height */
+    position: relative; /* Fixed position to stay visible during scrolling */
+  }
+  
+  

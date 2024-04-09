@@ -1,0 +1,38 @@
+<app-navbar4></app-navbar4>
+
+<div class="form-container">
+  <form [formGroup]="form">
+    <div>
+      <label for="query">Query:</label>
+      <input type="text" id="query" name="query" formControlName="query">
+      <div *ngIf="form.get('query').hasError('required') && form.get('query').touched">
+        <small>Query is required.</small>
+      </div>
+    </div>
+    <div>
+      <label for="response">Response:</label>
+      <input type="text" id="response" name="response" formControlName="response">
+      <div *ngIf="form.get('response').hasError('required') && form.get('response').touched">
+        <small>Query is required.</small>
+      </div>
+    </div>
+
+    <button type="button" (click)="createSupport()">Create</button>
+  </form>
+</div>
+
+
+<h2>FAQs</h2>
+<div class="accordion-container">
+    <div *ngFor="let query of queries | keyvalue" class="accordion-item">
+      <button class="accordion-header" (click)="toggleAccordion(query.key)" [ngClass]="{'active': selectedId === query.key}">
+        {{query.value}} <span class="icon" [ngClass]="{'active': selectedId === query.key}">+</span>
+      </button>
+      <div class="accordion-content" *ngIf="selectedId === query.key">
+        <p>{{ response?.response }}</p>
+        <button type="button" (click)="softDeleteSupportById(query.key)">Delete</button>
+      </div>
+    </div>
+</div>
+
+

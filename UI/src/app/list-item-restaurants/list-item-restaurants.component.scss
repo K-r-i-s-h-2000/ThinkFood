@@ -1,0 +1,157 @@
+/* list-item-restaurants.component.scss */
+
+/* Style for each individual restaurant */
+.restaurant {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  /* Style for the restaurant image */
+  .restaurant img {
+    width: 100%;
+    max-height: 200px; /* Set maximum height for the image */
+    object-fit: cover; /* Maintain image aspect ratio */
+    border-radius: 5px; /* Apply border radius */
+  }
+
+  /* Style for restaurant name */
+  .restaurant h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  /* Style for restaurant description */
+  .restaurant p {
+    margin-top: 5px;
+    font-size: 1rem;
+  }
+  .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #0a0a0a;
+  }
+  /* Style for the button */
+  .restaurant button {
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #007bff; /* Set button background color */
+    color: white; /* Set button text color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .restaurant button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+  }
+  /* list-item-restaurants.component.scss */
+
+:host {
+    display: block;
+    padding: 20px;
+    background-color: rgb(253, 253, 253); /* Change background color */
+    border-radius: 8px;
+    height: fit-content;
+  //  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow */
+  }
+
+  .restaurant {
+    margin-bottom: 20px;
+  }
+
+  .close-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  .no-restaurants-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 20px;
+  }
+
+  .no-restaurants-message p {
+    color: #888;
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .page-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust the margin bottom as needed */
+  }
+  
+  .page-heading h2 {
+    font-size: 1.8rem; /* Adjust the size of the heading */
+    font-weight: bold;
+    color: #333; /* Your preferred text color */
+    margin-left: 10px; /* Space between icon and text */
+  }
+  
+  .page-heading i {
+    font-size: 2rem; /* Adjust the icon size */
+  }
+  /* Existing styles */
+
+/* Updated styles for the rearranged layout */
+.restaurant {
+    display: flex;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.restaurant img {
+    width: 200px; /* Adjust the width as needed */
+    height: 150px; /* Set a fixed height or use 'auto' for proportional height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.restaurant-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Rest of your styles */
+/* ... (existing styles) */
+
+/* Updated styles for the rearranged layout */
+.page-heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.page-heading h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-left: 10px;
+    display: flex; /* Enable flex properties */
+    align-items: center; /* Align items */
+}
+
+.utensils-icon {
+    font-size: 2rem; /* Adjust the icon size */
+    margin-right: 10px; /* Add space between the icon and text */
+}
+
+/* ... (rest of your CSS) */

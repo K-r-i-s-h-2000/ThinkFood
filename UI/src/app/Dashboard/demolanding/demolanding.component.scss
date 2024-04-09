@@ -1,0 +1,199 @@
+
+.welcome-page {
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+
+  }
+
+  .item-div1 a{
+    cursor: pointer;
+  }
+  .item-div1 {
+
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #080808;
+    padding: 10px;
+    margin: 10px;
+    width: 200px;
+    text-align: left;
+  }
+
+  .item-div {
+
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #000000;
+    padding: 10px;
+
+    margin: 10px;
+    width: 200px;
+    text-align: left;
+  }
+
+  .btn {
+    padding: 12px;
+    background-color: #9e4de086;
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  .btn :hover{
+    background-color: red;
+  }
+  .item-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+main {
+  padding: 20px;
+  min-height: 70vh;
+}
+
+/* Featured items styles */
+.featured-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+}
+
+.item img {
+  max-width: 100%;
+}
+
+/* Popular restaurants styles */
+.popular-restaurants {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.restaurant {
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 300px;
+}
+
+.restaurant img {
+  max-width: 100%;
+}
+
+
+
+  /* Basic styling for buttons and sections */
+  .toggle-btn {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffcc00;
+    color: #333;
+    cursor: pointer;
+  }
+
+  .categories,
+  .restaurants {
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: none;
+  }
+
+  .categories .category,
+  .restaurants .restaurant {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  .category-list,.restaurant-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .category-item ,.restaurant-item{
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+  }
+
+  .category-button ,.restaurant-button{
+    margin-top: 10px;
+    padding: 6px 12px;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .item-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .item-card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+  }
+
+  .item-details {
+    margin-bottom: 10px;
+  }
+
+  .add-to-cart button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+
+/* Style for the main heading */
+h2 {
+  font-size: 36px;
+  color: #070606; /* Dark grey color */
+  margin-bottom: 20px;
+  font-family: Arial, sans-serif;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+/* Style for the second heading */
+h2:nth-of-type(2) {
+  font-size: 24px;
+  color: #070101; /* Slightly lighter grey color */
+  margin-bottom: 15px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+/* Apply margin to the top and bottom of the headings and components */
+h2 {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+app-listcategories,
+app-listrestaurants {
+  margin-bottom: 40px;
+}
+
+

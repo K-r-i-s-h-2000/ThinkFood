@@ -1,0 +1,93 @@
+<app-navbar4></app-navbar4>
+
+<div class="container">
+    <h2>Add Category</h2>
+    <form [formGroup]="categoryForm" (ngSubmit)="createCategory()">
+      <div>
+        <label for="categoryName">Title:</label>
+        <input type="text" id="categoryName" formControlName="categoryName">
+        <div *ngIf="categoryForm.get('categoryName').hasError('required') && categoryForm.get('categoryName').touched">
+          <small>Title is required.</small>
+        </div>
+      </div>
+      <div>
+        <label for="image">Image:</label>
+        <input type="text" id="image" formControlName="image">
+        <div *ngIf="categoryForm.get('image').hasError('required') && categoryForm.get('image').touched">
+          <small>Image is required.</small>
+        </div>
+      </div>
+      <div>
+      <button type="submit">Save</button>
+      </div>
+    </form>
+</div>
+
+
+<!-- <div>
+  <h2>Categories</h2>
+  <div class="category-list">
+    <div *ngFor="let category of categories" class="category-item">
+      <div>
+        {{ category.categoryName }}
+      </div>
+      <div class="image-container">
+        <img [src]="category.image" alt="Category Image" class="category-image" >
+      </div>
+      <div>
+        <button (click)="openUpdateCategoryDialog(category.id)">Edit</button>
+        <button (click)="deleteCategory(category.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="categories-container">
+  <h2>Categories</h2>
+  <div class="category-list">
+    <div *ngFor="let category of categories" class="category-item">
+      <div class="category-name">
+        {{ category.categoryName }}
+      </div>
+      <div class="image-container">
+        <img [src]="category.image" alt="Category Image" class="category-image">
+      </div>
+      <div class="category-actions">
+        <button (click)="openUpdateCategoryDialog(category.id)">Edit</button>
+        <button (click)="deleteCategory(category.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class="container" *ngIf="showEditForm">
+  <h2>Edit Category</h2>
+  <form [formGroup]="editCategoryForm" (ngSubmit)="updateCategory()">
+    <div>
+      <label for="editCategoryName">Title:</label>
+      <input type="text" id="editCategoryName" formControlName="categoryName">
+      <div *ngIf="editCategoryForm.get('categoryName').hasError('required') && editCategoryForm.get('categoryName').touched">
+        <small>Title is required.</small>
+      </div>
+    </div>
+    <div>
+      <label for="editImage">Image:</label>
+      <input type="text" id="editImage" formControlName="image">
+      <div *ngIf="editCategoryForm.get('image').hasError('required') && editCategoryForm.get('image').touched">
+        <small>Image is required.</small>
+      </div>
+    </div>
+    <div>
+      <button type="submit">Update</button>
+      <button type="button" (click)="cancelEdit()">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+ -->
+
+

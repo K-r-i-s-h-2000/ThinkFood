@@ -1,0 +1,28 @@
+<div class="dialog-container">
+<h2>Update Reviews and Ratings</h2>
+<form [formGroup]="updateForm" (ngSubmit)="updateReview()">
+    <div>
+      <label for="review">Review:</label>
+      <textarea id="review" formControlName="review" rows="4" cols="50" required></textarea>
+      <div *ngIf="updateForm.get('review').hasError('required') && updateForm.get('review').touched">
+        <small>Review is required.</small>
+      </div>
+    </div>
+  
+    <div>
+        <label for="rating">Rating:</label>
+        <input id="rating" type="number" formControlName="rating" min="1" max="5" required/>
+        <div *ngIf="updateForm.get('rating').hasError('required') && updateForm.get('rating').touched">
+            <small>Rating is required.</small>
+        </div>
+        <div *ngIf="updateForm.get('rating').hasError('min') && updateForm.get('rating').touched">
+          <small>Rating must be at least 1.</small>
+        </div>
+        <div *ngIf="updateForm.get('rating').hasError('max') && updateForm.get('rating').touched">
+          <small>Rating must be at most 5.</small>
+        </div>
+    </div>
+  
+    <button type="submit">Update</button>
+</form>
+</div>

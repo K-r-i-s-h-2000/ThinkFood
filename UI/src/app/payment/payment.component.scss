@@ -1,0 +1,115 @@
+/* payment.component.css */
+
+.hero-section {
+  position: relative;
+}
+
+.background-image {
+  position: absolute;
+  top: 10;
+  left: 0;
+  background-size: contain;
+  width: 100%;
+  //height: 390%;
+  background-image: url('../../assets/images/p2.jpg'); /* Replace with your image path */
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  height: 1200px; /* Adjust height as needed */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.payment-form {
+
+  position: relative;
+  z-index: 1;
+   position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 400px;
+
+  }
+
+  .payment-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+  }
+
+  .form-group label {
+    display: block;
+    font-weight: bold;
+  }
+
+  input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #b12c14;
+    color: #ece2e2;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .close-icon {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #050404;
+  }
+  form small {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+  }
+
+
+  // spinner
+  // .spinner-container {
+  //   position: fixed;
+  //   top: 50%;
+  //   left: 50%;
+  //   transform: translate(-50%, -50%);
+  //   z-index: 999; /* Ensure the spinner is on top of other elements */
+  // }
+
+  // .spinner {
+  //   width: 56px;
+  //   height: 56px;
+  //   border-radius: 50%;
+  //   border: 9px solid;
+  //   border-color: #dbdcef;
+  //   border-right-color: #474bff;
+  //   animation: spinner-d3wgkg 1s infinite linear;
+  // }
+

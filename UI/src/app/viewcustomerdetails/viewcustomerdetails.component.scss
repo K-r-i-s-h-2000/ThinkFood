@@ -1,0 +1,60 @@
+/* Styles for the edit profile form */
+.edit-profile-form {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  max-width: 90%;
+}
+
+.edit-profile-form h2 {
+  margin-bottom: 20px;
+  color: #333333;
+  font-size: 24px;
+}
+
+.edit-profile-form .form-group {
+  margin-bottom: 25px;
+}
+
+.edit-profile-form label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333333;
+  font-size: 16px;
+}
+
+.edit-profile-form p {
+  margin: 0;
+  color: #666666;
+}
+
+.edit-profile-form button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #ffcc00;
+  color: #333333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-profile-form button:hover {
+  background-color: #ffc107;
+}
+
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  color: #999999;
+}
